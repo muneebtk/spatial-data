@@ -84,6 +84,18 @@ A Django-based API for storing, updating, and retrieving spatial data, specifica
 | PUT    | `/api/points/<id>/` | Update a specific point    |
 | DELETE | `/api/points/<id>/` | Delete a specific point    |
 
+#### Sample Payload for `POST /api/points/`:
+```json
+{
+  "name": "Sample Point",
+  "description": "A point in space",
+  "location": {
+    "type": "Point",
+    "coordinates": [12.4924, 41.8902]
+  }
+}
+```
+
 ### **Polygon Data Endpoints**
 
 | Method | Endpoint              | Description                  |
@@ -95,6 +107,25 @@ A Django-based API for storing, updating, and retrieving spatial data, specifica
 | DELETE | `/api/polygons/<id>/` | Delete a specific polygon    |
 
 ---
+#### Sample Payload for `POST /api/polygons/`:
+```json
+{
+  "name": "Sample Polygon",
+  "description": "A sample polygon data",
+  "boundary": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [12.4924, 41.8902],
+        [12.4924, 41.8912],
+        [12.4934, 41.8912],
+        [12.4934, 41.8902],
+        [12.4924, 41.8902]
+      ]
+    ]
+  }
+}
+```
 
 ## **Testing**
 
